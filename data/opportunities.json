@@ -1,0 +1,47 @@
+[
+    {
+        "id": "iitm-btech-2027",
+        "institution_id": "iit-madras",
+        "course_id": "btech",
+        "exam_id": "jee-advanced",
+        "academic_year": "2027-28",
+
+        "application_start": null,
+        "application_deadline": null,
+        "exam_date": null,
+
+        "application_fee": null,
+
+        "eligibility": "Refer to the official admission notification.",
+
+        "application_url": "https://jeeadv.ac.in/",
+        "notification_url": "https://jeeadv.ac.in/",
+
+        "status": "UPCOMING",
+
+        "source_id": "src-jee-advanced"
+    },
+
+    {
+        "id": "iitm-btech-cse-2027",
+        "institution_id": "iit-madras",
+        "course_id": "btech-cse",
+        "exam_id": "jee-advanced",
+        "academic_year": "2027-28",
+
+        "application_start": null,
+        "application_deadline": null,
+        "exam_date": null,
+
+        "application_fee": null,
+
+        "eligibility": "Refer to the official admission notification.",
+
+        "application_url": "https://jeeadv.ac.in/",
+        "notification_url": "https://jeeadv.ac.in/",
+
+        "status": "UPCOMING",
+
+        "source_id": "src-jee-advanced"
+    }
+]

@@ -1,0 +1,23 @@
+[
+    {
+        "id": "src-jee-main",
+        "source_type": "official_website",
+        "name": "JEE Main Official Website",
+        "url": "https://jeemain.nta.nic.in/",
+        "last_verified": "2026-08-12"
+    },
+    {
+        "id": "src-jee-advanced",
+        "source_type": "official_website",
+        "name": "JEE Advanced Official Website",
+        "url": "https://jeeadv.ac.in/",
+        "last_verified": "2026-08-12"
+    },
+    {
+        "id": "src-iitm",
+        "source_type": "official_website",
+        "name": "IIT Madras Official Website",
+        "url": "https://www.iitm.ac.in/",
+        "last_verified": "2026-08-12"
+    }
+]

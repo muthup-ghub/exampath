@@ -1,0 +1,26 @@
+[
+    {
+        "id": "btech-cse",
+        "name": "B.Tech Computer Science and Engineering",
+        "level": "Undergraduate",
+        "stream": "Engineering"
+    },
+    {
+        "id": "btech",
+        "name": "B.Tech",
+        "level": "Undergraduate",
+        "stream": "Engineering"
+    },
+    {
+        "id": "mbbs",
+        "name": "MBBS",
+        "level": "Undergraduate",
+        "stream": "Medicine"
+    },
+    {
+        "id": "llb",
+        "name": "LLB",
+        "level": "Undergraduate",
+        "stream": "Law"
+    }
+]

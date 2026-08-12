@@ -1,0 +1,20 @@
+[
+    {
+        "id": "iit-madras",
+        "name": "Indian Institute of Technology Madras",
+        "type": "Institute",
+        "country": "India",
+        "state": "Tamil Nadu",
+        "city": "Chennai",
+        "official_website": "https://www.iitm.ac.in/"
+    },
+    {
+        "id": "anna-university",
+        "name": "Anna University",
+        "type": "University",
+        "country": "India",
+        "state": "Tamil Nadu",
+        "city": "Chennai",
+        "official_website": "https://www.annauniv.edu/"
+    }
+]

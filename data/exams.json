@@ -1,23 +1,34 @@
 [
     {
+        "id": "jee-main",
         "name": "JEE Main",
+        "conducting_body": "National Testing Agency",
         "category": "Engineering",
-        "location": "India",
-        "application_deadline": "To be updated",
-        "official_url": "https://jeemain.nta.nic.in/"
+        "level": "National",
+        "official_website": "https://jeemain.nta.nic.in/"
     },
     {
+        "id": "jee-advanced",
+        "name": "JEE Advanced",
+        "conducting_body": "IITs",
+        "category": "Engineering",
+        "level": "National",
+        "official_website": "https://jeeadv.ac.in/"
+    },
+    {
+        "id": "neet-ug",
         "name": "NEET UG",
+        "conducting_body": "National Testing Agency",
         "category": "Medicine",
-        "location": "India",
-        "application_deadline": "To be updated",
-        "official_url": "https://neet.nta.nic.in/"
+        "level": "National",
+        "official_website": "https://neet.nta.nic.in/"
     },
     {
+        "id": "clat",
         "name": "CLAT",
+        "conducting_body": "Consortium of National Law Universities",
         "category": "Law",
-        "location": "India",
-        "application_deadline": "To be updated",
-        "official_url": "https://consortiumofnlus.ac.in/"
+        "level": "National",
+        "official_website": "https://consortiumofnlus.ac.in/"
     }
 ]
