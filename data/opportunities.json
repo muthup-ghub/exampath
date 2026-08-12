@@ -1,47 +1,93 @@
 [
     {
         "id": "iitm-btech-2027",
+
         "institution_id": "iit-madras",
+
         "course_id": "btech",
+
         "exam_id": "jee-advanced",
+
         "academic_year": "2027-28",
 
-        "application_start": null,
-        "application_deadline": null,
-        "exam_date": null,
+        "eligibility": {
+            "qualification": "Class 12",
+            "stream": "Science",
+            "subjects": [
+                "Physics",
+                "Chemistry",
+                "Mathematics"
+            ],
+            "minimum_percentage": null,
+            "age_criteria": "Refer to official admission notification"
+        },
 
-        "application_fee": null,
+        "application": {
+            "start_date": null,
+            "deadline": null,
+            "fee": null,
+            "currency": "INR",
+            "url": "https://jeeadv.ac.in/"
+        },
 
-        "eligibility": "Refer to the official admission notification.",
-
-        "application_url": "https://jeeadv.ac.in/",
-        "notification_url": "https://jeeadv.ac.in/",
+        "admission": {
+            "exam_date": null,
+            "counselling_date": null,
+            "admission_date": null
+        },
 
         "status": "UPCOMING",
 
-        "source_id": "src-jee-advanced"
+        "notification_url": "https://jeeadv.ac.in/",
+
+        "source_id": "src-jee-advanced",
+
+        "last_verified": "2026-08-12"
     },
 
     {
         "id": "iitm-btech-cse-2027",
+
         "institution_id": "iit-madras",
+
         "course_id": "btech-cse",
+
         "exam_id": "jee-advanced",
+
         "academic_year": "2027-28",
 
-        "application_start": null,
-        "application_deadline": null,
-        "exam_date": null,
+        "eligibility": {
+            "qualification": "Class 12",
+            "stream": "Science",
+            "subjects": [
+                "Physics",
+                "Chemistry",
+                "Mathematics"
+            ],
+            "minimum_percentage": null,
+            "age_criteria": "Refer to official admission notification"
+        },
 
-        "application_fee": null,
+        "application": {
+            "start_date": null,
+            "deadline": null,
+            "fee": null,
+            "currency": "INR",
+            "url": "https://jeeadv.ac.in/"
+        },
 
-        "eligibility": "Refer to the official admission notification.",
-
-        "application_url": "https://jeeadv.ac.in/",
-        "notification_url": "https://jeeadv.ac.in/",
+        "admission": {
+            "exam_date": null,
+            "counselling_date": null,
+            "admission_date": null
+        },
 
         "status": "UPCOMING",
 
-        "source_id": "src-jee-advanced"
+        "notification_url": "https://jeeadv.ac.in/",
+
+        "source_id": "src-jee-advanced",
+
+        "last_verified": "2026-08-12"
     }
 ]

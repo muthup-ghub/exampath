@@ -1,22 +1,27 @@
 [
     {
         "id": "src-jee-main",
-        "source_type": "official_website",
         "name": "JEE Main Official Website",
+        "source_type": "OFFICIAL_WEBSITE",
+        "organization": "National Testing Agency",
         "url": "https://jeemain.nta.nic.in/",
         "last_verified": "2026-08-12"
     },
+
     {
         "id": "src-jee-advanced",
-        "source_type": "official_website",
         "name": "JEE Advanced Official Website",
+        "source_type": "OFFICIAL_WEBSITE",
+        "organization": "IITs",
         "url": "https://jeeadv.ac.in/",
         "last_verified": "2026-08-12"
     },
+
     {
         "id": "src-iitm",
-        "source_type": "official_website",
         "name": "IIT Madras Official Website",
+        "source_type": "OFFICIAL_WEBSITE",
+        "organization": "Indian Institute of Technology Madras",
         "url": "https://www.iitm.ac.in/",
         "last_verified": "2026-08-12"
     }
