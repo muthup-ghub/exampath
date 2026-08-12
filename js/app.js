@@ -1,119 +1,345 @@
+let institutions = [];
 let exams = [];
+let courses = [];
+let opportunities = [];
+let sources = [];
 
 
 /*
- * Load exam data
+ * Load all ExamPath data
  */
-async function loadExams() {
+async function loadData() {
 
     try {
 
-        const response = await fetch("data/exams.json");
+        const [
+            institutionsResponse,
+            examsResponse,
+            coursesResponse,
+            opportunitiesResponse,
+            sourcesResponse
+        ] = await Promise.all([
 
-        exams = await response.json();
+            fetch("data/institutions.json"),
+            fetch("data/exams.json"),
+            fetch("data/courses.json"),
+            fetch("data/opportunities.json"),
+            fetch("data/sources.json")
 
-        displayExams(exams);
+        ]);
+
+
+        institutions = await institutionsResponse.json();
+        exams = await examsResponse.json();
+        courses = await coursesResponse.json();
+        opportunities = await opportunitiesResponse.json();
+        sources = await sourcesResponse.json();
+
+
+        displayOpportunities(opportunities);
 
     } catch (error) {
 
-        console.error("Unable to load exam data:", error);
+        console.error(
+            "Unable to load ExamPath data:",
+            error
+        );
 
     }
 }
 
 
 /*
- * Display exams
+ * Find institution
  */
-function displayExams(data) {
+function getInstitution(id) {
 
-    const examList = document.getElementById("examList");
+    return institutions.find(
+        institution => institution.id === id
+    );
+
+}
+
+
+/*
+ * Find exam
+ */
+function getExam(id) {
+
+    return exams.find(
+        exam => exam.id === id
+    );
+
+}
+
+
+/*
+ * Find course
+ */
+function getCourse(id) {
+
+    return courses.find(
+        course => course.id === id
+    );
+
+}
+
+
+/*
+ * Find source
+ */
+function getSource(id) {
+
+    return sources.find(
+        source => source.id === id
+    );
+
+}
+
+
+/*
+ * Display opportunities
+ */
+function displayOpportunities(data) {
+
+    const examList =
+        document.getElementById("examList");
 
     examList.innerHTML = "";
 
-    data.forEach(exam => {
 
-        const card = document.createElement("div");
+    if (data.length === 0) {
+
+        examList.innerHTML = `
+            <p>No opportunities found.</p>
+        `;
+
+        return;
+
+    }
+
+
+    data.forEach(opportunity => {
+
+        const institution =
+            getInstitution(
+                opportunity.institution_id
+            );
+
+        const exam =
+            getExam(
+                opportunity.exam_id
+            );
+
+        const course =
+            getCourse(
+                opportunity.course_id
+            );
+
+        const source =
+            getSource(
+                opportunity.source_id
+            );
+
+
+        const card =
+            document.createElement("div");
 
         card.className = "exam-card";
 
+
         card.innerHTML = `
-            <h3>${exam.name}</h3>
+
+            <h3>
+                ${exam ? exam.name : "Exam"}
+            </h3>
 
             <p>
-                <strong>Category:</strong>
-                ${exam.category}
+                <strong>Institution:</strong>
+                ${institution
+                    ? institution.name
+                    : "Not available"}
             </p>
 
             <p>
-                <strong>Location:</strong>
-                ${exam.location}
+                <strong>Course:</strong>
+                ${course
+                    ? course.name
+                    : "Not available"}
+            </p>
+
+            <p>
+                <strong>Academic Year:</strong>
+                ${opportunity.academic_year}
+            </p>
+
+            <p>
+                <strong>Status:</strong>
+                ${opportunity.status}
             </p>
 
             <p>
                 <strong>Application Deadline:</strong>
-                ${exam.application_deadline}
+                ${opportunity.application_deadline
+                    || "To be announced"}
             </p>
 
-            <a href="${exam.official_url}"
-               target="_blank"
-               rel="noopener noreferrer">
-                Official Website →
+            <a
+                href="${opportunity.application_url}"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Official Application →
             </a>
+
+            ${
+                source
+                    ? `
+                        <br>
+                        <a
+                            href="${source.url}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Source →
+                        </a>
+                    `
+                    : ""
+            }
+
         `;
+
 
         examList.appendChild(card);
 
     });
+
 }
 
 
 /*
- * Search
+ * Search opportunities
  */
 function search() {
 
     const query =
-        document.getElementById("searchInput")
-        .value
-        .toLowerCase()
-        .trim();
+        document
+            .getElementById("searchInput")
+            .value
+            .toLowerCase()
+            .trim();
+
 
     if (!query) {
 
-        displayExams(exams);
+        displayOpportunities(opportunities);
 
         return;
+
     }
 
-    const results = exams.filter(exam =>
 
-        exam.name.toLowerCase().includes(query) ||
+    const results =
+        opportunities.filter(opportunity => {
 
-        exam.category.toLowerCase().includes(query) ||
+            const institution =
+                getInstitution(
+                    opportunity.institution_id
+                );
 
-        exam.location.toLowerCase().includes(query)
+            const exam =
+                getExam(
+                    opportunity.exam_id
+                );
 
-    );
+            const course =
+                getCourse(
+                    opportunity.course_id
+                );
 
-    displayExams(results);
+
+            return (
+
+                (
+                    institution &&
+                    institution.name
+                        .toLowerCase()
+                        .includes(query)
+                )
+
+                ||
+
+                (
+                    exam &&
+                    exam.name
+                        .toLowerCase()
+                        .includes(query)
+                )
+
+                ||
+
+                (
+                    course &&
+                    course.name
+                        .toLowerCase()
+                        .includes(query)
+                )
+
+            );
+
+        });
+
+
+    displayOpportunities(results);
+
 }
 
 
 /*
- * Category filter
+ * Filter by category
  */
 function filterCategory(category) {
 
-    const results = exams.filter(exam =>
-        exam.category === category
-    );
+    const results =
+        opportunities.filter(opportunity => {
 
-    displayExams(results);
+            const exam =
+                getExam(
+                    opportunity.exam_id
+                );
+
+
+            const course =
+                getCourse(
+                    opportunity.course_id
+                );
+
+
+            return (
+
+                (
+                    exam &&
+                    exam.category === category
+                )
+
+                ||
+
+                (
+                    course &&
+                    course.stream === category
+                )
+
+            );
+
+        });
+
+
+    displayOpportunities(results);
+
 }
 
 
 /*
- * Start application
+ * Start ExamPath
  */
-loadExams();
+loadData();
