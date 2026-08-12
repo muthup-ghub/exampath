@@ -1,0 +1,23 @@
+[
+    {
+        "name": "JEE Main",
+        "category": "Engineering",
+        "location": "India",
+        "application_deadline": "To be updated",
+        "official_url": "https://jeemain.nta.nic.in/"
+    },
+    {
+        "name": "NEET UG",
+        "category": "Medicine",
+        "location": "India",
+        "application_deadline": "To be updated",
+        "official_url": "https://neet.nta.nic.in/"
+    },
+    {
+        "name": "CLAT",
+        "category": "Law",
+        "location": "India",
+        "application_deadline": "To be updated",
+        "official_url": "https://consortiumofnlus.ac.in/"
+    }
+]

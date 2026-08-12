@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ExamPath</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container">
+            <h1>ExamPath</h1>
+            <p>Find Exams • Colleges • Admissions</p>
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- Search Section -->
+        <section class="hero">
+            <div class="container">
+
+                <h2>Find the right path for your education</h2>
+
+                <p>
+                    Discover entrance exams, colleges, admissions,
+                    application deadlines and official links.
+                </p>
+
+                <div class="search-box">
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search exams, colleges, courses..."
+                    >
+
+                    <button onclick="search()">
+                        Search
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Categories -->
+        <section class="categories">
+            <div class="container">
+
+                <h2>Explore by Category</h2>
+
+                <div class="category-grid">
+
+                    <button onclick="filterCategory('Engineering')">
+                        Engineering
+                    </button>
+
+                    <button onclick="filterCategory('Medicine')">
+                        Medicine
+                    </button>
+
+                    <button onclick="filterCategory('Law')">
+                        Law
+                    </button>
+
+                    <button onclick="filterCategory('Management')">
+                        Management
+                    </button>
+
+                    <button onclick="filterCategory('Arts')">
+                        Arts & Science
+                    </button>
+
+                    <button onclick="filterCategory('Government')">
+                        Government Exams
+                    </button>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Upcoming -->
+        <section class="upcoming">
+            <div class="container">
+
+                <h2>Upcoming Opportunities</h2>
+
+                <div id="examList" class="exam-grid">
+
+                    <!-- Data will be loaded here -->
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <footer>
+        <div class="container">
+            <p>
+                © 2026 ExamPath
+            </p>
+
+            <p>
+                Information should always be verified
+                from the official source.
+            </p>
+        </div>
+    </footer>
+
+
+    <script src="js/app.js"></script>
+
+</body>
+</html>

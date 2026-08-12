@@ -1,0 +1,121 @@
+                         ┌──────────────────────┐
+                         │       GitHub         │
+                         │                      │
+                         │  ExamPath Repository  │
+                         └──────────┬───────────┘
+                                    │
+                 ┌──────────────────┼──────────────────┐
+                 │                  │                  │
+                 ▼                  ▼                  ▼
+           Frontend Code      Data / JSON        Python Scripts
+                 │                  │                  │
+                 │                  │                  │
+                 ▼                  │                  ▼
+          GitHub Actions ◄──────────┘           GitHub Actions
+                 │                                    │
+                 ▼                                    │
+          GitHub Pages                                │
+                 │                                    │
+                 ▼                                    │
+       ┌──────────────────┐                           │
+       │    ExamPath      │                           │
+       │    Website       │                           │
+       └────────┬─────────┘                           │
+                │                                     │
+                └───────────────┬─────────────────────┘
+                                │
+                         Static JSON data
+
+Approach:
+
+GitHub Repository
+      │
+      ├── GitHub Codespaces
+      │       │
+      │       └── Development environment
+      │
+      ├── GitHub Actions
+      │       │
+      │       └── CI/CD + scheduled jobs
+      │
+      └── GitHub Pages
+              │
+              └── Public ExamPath website
+
+First Target:
+ExamPath
+   │
+   ├── GitHub Repository
+   │
+   ├── Simple homepage
+   │
+   ├── Search box
+   │
+   ├── Course filters
+   │
+   ├── College/exam cards
+   │
+   ├── JSON data
+   │
+   └── GitHub Actions
+           │
+           └── Build → Deploy → GitHub Pages
+
+
+Initial Architecture:
+Every day at 6 AM
+       │
+       ▼
+GitHub Actions
+       │
+       ▼
+Python Collector
+       │
+       ├── College Website A
+       ├── College Website B
+       ├── Exam Website C
+       └── Official PDF
+       │
+       ▼
+Extract information
+       │
+       ▼
+Validate
+       │
+       ▼
+Update JSON
+       │
+       ▼
+git commit
+       │
+       ▼
+GitHub
+       │
+       ▼
+GitHub Pages
+       │
+       ▼
+Updated ExamPath
+
+Repo structure:
+ExamPath/
+│
+├── index.html
+│
+├── css/
+│   └── style.css
+│
+├── js/
+│   └── app.js
+│
+├── data/
+│   ├── colleges.json
+│   ├── exams.json
+│   └── admissions.json
+│
+├── .github/
+│   └── workflows/
+│       └── deploy.yml
+│
+└── README.md
+
