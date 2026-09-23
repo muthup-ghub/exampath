@@ -1,4 +1,155 @@
 {
-  "updatedAt": null,
-  "sources": {}
+  "updatedAt": "2026-09-23T13:56:12.071Z",
+  "sources": {
+    "src-jee-main": {
+      "id": "src-jee-main",
+      "name": "JEE Main Official Website",
+      "url": "https://jeemain.nta.nic.in/",
+      "status": "changed",
+      "lastChecked": "2026-09-23T13:56:12.071Z",
+      "hash": "78bba536be2feb839baf341376942661e90464e31a258f18a8cca4f8cf143bba",
+      "changed": true,
+      "previousHash": null
+    },
+    "src-jee-advanced": {
+      "id": "src-jee-advanced",
+      "name": "JEE Advanced Official Website",
+      "url": "https://jeeadv.ac.in/",
+      "status": "changed",
+      "lastChecked": "2026-09-23T13:56:12.071Z",
+      "hash": "3b5b8f292afb3dae6793bca87d6bfbd3b602c85abae5ac1b209e55e83bb73dd7",
+      "changed": true,
+      "previousHash": null
+    },
+    "src-neet-ug": {
+      "id": "src-neet-ug",
+      "name": "NEET UG Official Website",
+      "url": "https://neet.nta.nic.in/",
+      "status": "changed",
+      "lastChecked": "2026-09-23T13:56:12.071Z",
+      "hash": "b4ee3e8baa2288445563ae7c27d5e49e4271b487651e569bcda41dbeb7785a0b",
+      "changed": true,
+      "previousHash": null
+    },
+    "src-cuet-ug": {
+      "id": "src-cuet-ug",
+      "name": "CUET UG Official Website",
+      "url": "https://cuet.nta.nic.in/",
+      "status": "error",
+      "lastChecked": "2026-09-23T13:56:12.071Z",
+      "error": "fetch failed",
+      "changed": false,
+      "previousHash": null
+    },
+    "src-clat": {
+      "id": "src-clat",
+      "name": "CLAT Official Website",
+      "url": "https://consortiumofnlus.ac.in/",
+      "status": "changed",
+      "lastChecked": "2026-09-23T13:56:12.071Z",
+      "hash": "1cf32644d63a0ad7fb32f3651d3df71637492beee0efaa1dc008b196ef307bd4",
+      "changed": true,
+      "previousHash": null
+    },
+    "src-cat": {
+      "id": "src-cat",
+      "name": "CAT Official Website",
+      "url": "https://iimcat.ac.in/",
+      "status": "changed",
+      "lastChecked": "2026-09-23T13:56:12.071Z",
+      "hash": "f632ebb060968e2d8fa6c9d039d720b20c1cf5259536b00fb9dd22be2820ebf9",
+      "changed": true,
+      "previousHash": null
+    },
+    "src-nata": {
+      "id": "src-nata",
+      "name": "NATA Official Website",
+      "url": "https://www.nata.in/",
+      "status": "changed",
+      "lastChecked": "2026-09-23T13:56:12.071Z",
+      "hash": "b65aaff7f7975a526ef18bc4bfe2c9ee28ad9efb723cefc133e69d19cf566ee5",
+      "changed": true,
+      "previousHash": null
+    },
+    "src-nchm-jee": {
+      "id": "src-nchm-jee",
+      "name": "NCHM JEE Official Website",
+      "url": "https://exams.nta.ac.in/NCHM/",
+      "status": "error",
+      "lastChecked": "2026-09-23T13:56:12.071Z",
+      "error": "Failed to fetch https://exams.nta.ac.in/NCHM/: 404",
+      "changed": false,
+      "previousHash": null
+    },
+    "src-ugc-net": {
+      "id": "src-ugc-net",
+      "name": "UGC NET Official Website",
+      "url": "https://ugcnet.nta.nic.in/",
+      "status": "changed",
+      "lastChecked": "2026-09-23T13:56:12.071Z",
+      "hash": "72c33f4c7ec12542e5eec8c2b6a4b41dc977def2d6166248c9f369a649103f55",
+      "changed": true,
+      "previousHash": null
+    },
+    "src-ctet": {
+      "id": "src-ctet",
+      "name": "CTET Official Website",
+      "url": "https://ctet.nic.in/",
+      "status": "changed",
+      "lastChecked": "2026-09-23T13:56:12.071Z",
+      "hash": "bf04d578ee0e893cf5daf45fb7d25a23d5652f3b8158593ec96f67b03c5d67dc",
+      "changed": true,
+      "previousHash": null
+    },
+    "src-upsc": {
+      "id": "src-upsc",
+      "name": "UPSC Official Website",
+      "url": "https://upsc.gov.in/",
+      "status": "error",
+      "lastChecked": "2026-09-23T13:56:12.071Z",
+      "error": "fetch failed",
+      "changed": false,
+      "previousHash": null
+    },
+    "src-ssc": {
+      "id": "src-ssc",
+      "name": "SSC Official Website",
+      "url": "https://ssc.gov.in/",
+      "status": "changed",
+      "lastChecked": "2026-09-23T13:56:12.071Z",
+      "hash": "882e5dbfbeaea5a49b733cf49d2c6f8da569543df82af165cdfcad751d101737",
+      "changed": true,
+      "previousHash": null
+    },
+    "src-ibps": {
+      "id": "src-ibps",
+      "name": "IBPS Official Website",
+      "url": "https://www.ibps.in/",
+      "status": "error",
+      "lastChecked": "2026-09-23T13:56:12.071Z",
+      "error": "fetch failed",
+      "changed": false,
+      "previousHash": null
+    },
+    "src-tnea": {
+      "id": "src-tnea",
+      "name": "TNEA Official Website",
+      "url": "https://www.tneaonline.org/",
+      "status": "error",
+      "lastChecked": "2026-09-23T13:56:12.071Z",
+      "error": "Failed to fetch https://www.tneaonline.org/: 403",
+      "changed": false,
+      "previousHash": null
+    },
+    "src-iitm": {
+      "id": "src-iitm",
+      "name": "IIT Madras Official Website",
+      "url": "https://www.iitm.ac.in/",
+      "status": "changed",
+      "lastChecked": "2026-09-23T13:56:12.071Z",
+      "hash": "10d384fc40c078be4b432a5a5e501a892c499743d65fe7cd4d3629109dc703d6",
+      "changed": true,
+      "previousHash": null
+    }
+  }
 }
