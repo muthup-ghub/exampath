@@ -1,28 +1,152 @@
 [
-    {
-        "id": "src-jee-main",
-        "name": "JEE Main Official Website",
-        "source_type": "OFFICIAL_WEBSITE",
-        "organization": "National Testing Agency",
-        "url": "https://jeemain.nta.nic.in/",
-        "last_verified": "2026-08-12"
-    },
-
-    {
-        "id": "src-jee-advanced",
-        "name": "JEE Advanced Official Website",
-        "source_type": "OFFICIAL_WEBSITE",
-        "organization": "IITs",
-        "url": "https://jeeadv.ac.in/",
-        "last_verified": "2026-08-12"
-    },
-
-    {
-        "id": "src-iitm",
-        "name": "IIT Madras Official Website",
-        "source_type": "OFFICIAL_WEBSITE",
-        "organization": "Indian Institute of Technology Madras",
-        "url": "https://www.iitm.ac.in/",
-        "last_verified": "2026-08-12"
-    }
+  {
+    "id": "src-jee-main",
+    "exam_ids": ["jee-main", "jee-main-paper-2"],
+    "name": "JEE Main Official Website",
+    "source_type": "OFFICIAL_WEBSITE",
+    "organization": "National Testing Agency",
+    "url": "https://jeemain.nta.nic.in/",
+    "enabled": true,
+    "last_verified": null
+  },
+  {
+    "id": "src-jee-advanced",
+    "exam_ids": ["jee-advanced"],
+    "name": "JEE Advanced Official Website",
+    "source_type": "OFFICIAL_WEBSITE",
+    "organization": "IITs",
+    "url": "https://jeeadv.ac.in/",
+    "enabled": true,
+    "last_verified": null
+  },
+  {
+    "id": "src-neet-ug",
+    "exam_ids": ["neet-ug"],
+    "name": "NEET UG Official Website",
+    "source_type": "OFFICIAL_WEBSITE",
+    "organization": "National Testing Agency",
+    "url": "https://neet.nta.nic.in/",
+    "enabled": true,
+    "last_verified": null
+  },
+  {
+    "id": "src-cuet-ug",
+    "exam_ids": ["cuet-ug"],
+    "name": "CUET UG Official Website",
+    "source_type": "OFFICIAL_WEBSITE",
+    "organization": "National Testing Agency",
+    "url": "https://cuet.nta.nic.in/",
+    "enabled": true,
+    "last_verified": null
+  },
+  {
+    "id": "src-clat",
+    "exam_ids": ["clat-ug", "clat-pg"],
+    "name": "CLAT Official Website",
+    "source_type": "OFFICIAL_WEBSITE",
+    "organization": "Consortium of National Law Universities",
+    "url": "https://consortiumofnlus.ac.in/",
+    "enabled": true,
+    "last_verified": null
+  },
+  {
+    "id": "src-cat",
+    "exam_ids": ["cat"],
+    "name": "CAT Official Website",
+    "source_type": "OFFICIAL_WEBSITE",
+    "organization": "Indian Institutes of Management",
+    "url": "https://iimcat.ac.in/",
+    "enabled": true,
+    "last_verified": null
+  },
+  {
+    "id": "src-nata",
+    "exam_ids": ["nata"],
+    "name": "NATA Official Website",
+    "source_type": "OFFICIAL_WEBSITE",
+    "organization": "Council of Architecture",
+    "url": "https://www.nata.in/",
+    "enabled": true,
+    "last_verified": null
+  },
+  {
+    "id": "src-nchm-jee",
+    "exam_ids": ["nchm-jee"],
+    "name": "NCHM JEE Official Website",
+    "source_type": "OFFICIAL_WEBSITE",
+    "organization": "National Testing Agency",
+    "url": "https://exams.nta.ac.in/NCHM/",
+    "enabled": true,
+    "last_verified": null
+  },
+  {
+    "id": "src-ugc-net",
+    "exam_ids": ["ugc-net"],
+    "name": "UGC NET Official Website",
+    "source_type": "OFFICIAL_WEBSITE",
+    "organization": "National Testing Agency",
+    "url": "https://ugcnet.nta.nic.in/",
+    "enabled": true,
+    "last_verified": null
+  },
+  {
+    "id": "src-ctet",
+    "exam_ids": ["ctet"],
+    "name": "CTET Official Website",
+    "source_type": "OFFICIAL_WEBSITE",
+    "organization": "Central Board of Secondary Education",
+    "url": "https://ctet.nic.in/",
+    "enabled": true,
+    "last_verified": null
+  },
+  {
+    "id": "src-upsc",
+    "exam_ids": ["nda", "cds", "capf-ac", "upsc-cse", "ifs", "ies", "cms", "geo-scientist", "ies-iss"],
+    "name": "UPSC Official Website",
+    "source_type": "OFFICIAL_WEBSITE",
+    "organization": "Union Public Service Commission",
+    "url": "https://upsc.gov.in/",
+    "enabled": true,
+    "last_verified": null
+  },
+  {
+    "id": "src-ssc",
+    "exam_ids": ["ssc-cgl", "ssc-chsl", "ssc-mts", "ssc-gd", "ssc-je", "ssc-cpo", "ssc-stenographer", "ssc-selection-post"],
+    "name": "SSC Official Website",
+    "source_type": "OFFICIAL_WEBSITE",
+    "organization": "Staff Selection Commission",
+    "url": "https://ssc.gov.in/",
+    "enabled": true,
+    "last_verified": null
+  },
+  {
+    "id": "src-ibps",
+    "exam_ids": ["ibps-po-mt", "ibps-clerk-csa", "ibps-so", "ibps-rrb-po", "ibps-rrb-clerk"],
+    "name": "IBPS Official Website",
+    "source_type": "OFFICIAL_WEBSITE",
+    "organization": "Institute of Banking Personnel Selection",
+    "url": "https://www.ibps.in/",
+    "enabled": true,
+    "last_verified": null
+  },
+  {
+    "id": "src-tnea",
+    "exam_ids": ["tnea", "tnea-dte"],
+    "name": "TNEA Official Website",
+    "source_type": "OFFICIAL_WEBSITE",
+    "organization": "Directorate of Technical Education, Tamil Nadu",
+    "url": "https://www.tneaonline.org/",
+    "enabled": true,
+    "last_verified": null
+  },
+  {
+    "id": "src-iitm",
+    "exam_ids": [],
+    "name": "IIT Madras Official Website",
+    "source_type": "OFFICIAL_WEBSITE",
+    "organization": "Indian Institute of Technology Madras",
+    "url": "https://www.iitm.ac.in/",
+    "enabled": false,
+    "last_verified": null
+  }
 ]
