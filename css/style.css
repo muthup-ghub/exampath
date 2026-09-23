@@ -155,6 +155,15 @@ footer {
     text-align: center;
 }
 
+.error-message {
+    color: #b42318;
+    background: #fef3f2;
+    border: 1px solid #fecdca;
+    border-radius: 6px;
+    padding: 12px;
+    margin: 16px 0;
+}
+
 footer p {
     margin: 5px 0;
     font-size: 14px;
