@@ -1,15 +1,406 @@
-<form id="searchForm" class="search-box">
-    <input
-        type="search"
-        id="searchInput"
-        placeholder="Search exams, colleges, courses..."
-        aria-label="Search exams, colleges, and courses"
-        autocomplete="off"
-    >
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExamPath</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-    <button type="submit">
-        Search
-    </button>
-</form>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f7f7f7;
+            color: #222;
+        }
 
-<p id="searchStatus" aria-live="polite"></p>
+        .container {
+            width: min(1100px, 90%);
+            margin: 0 auto;
+        }
+
+        .header {
+            background: #0f172a;
+            color: white;
+            padding: 30px 0;
+        }
+
+        .header h1 {
+            margin: 0 0 8px;
+            font-size: 2.2rem;
+        }
+
+        .header p {
+            margin: 0;
+            color: #dbeafe;
+            font-size: 1.1rem;
+        }
+
+        .hero {
+            padding: 60px 0 40px;
+            background: linear-gradient(135deg, #eff6ff, #f8fafc);
+        }
+
+        .hero h2 {
+            margin: 0 0 12px;
+            font-size: 2.2rem;
+        }
+
+        .hero p {
+            margin: 0 0 24px;
+            font-size: 1.05rem;
+            color: #475569;
+        }
+
+        .search-box {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            max-width: 700px;
+            flex-wrap: wrap;
+        }
+
+        .search-box input {
+            flex: 1 1 450px;
+            padding: 15px 18px;
+            font-size: 1rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 10px;
+            outline: none;
+        }
+
+        .search-box button,
+        .category-grid button {
+            padding: 14px 20px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        .search-box button {
+            background: #2563eb;
+            color: white;
+            font-weight: 600;
+        }
+
+        .search-box button:hover,
+        .category-grid button:hover {
+            transform: translateY(-1px);
+            opacity: 0.96;
+        }
+
+        .categories {
+            padding: 40px 0;
+        }
+
+        .categories h2 {
+            margin-bottom: 20px;
+        }
+
+        .category-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .category-grid button {
+            background: #e2e8f0;
+            color: #0f172a;
+            font-weight: 600;
+        }
+
+        .category-grid button.active {
+            background: #0f172a;
+            color: white;
+        }
+
+        .upcoming {
+            padding: 20px 0 60px;
+        }
+
+        .upcoming h2 {
+            margin-bottom: 20px;
+        }
+
+        .exam-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .exam-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(15, 23, 42, 0.05);
+        }
+
+        .exam-card h3 {
+            margin: 0 0 10px;
+            font-size: 1.2rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #dbeafe;
+            color: #1d4ed8;
+            padding: 5px 10px;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .exam-card p {
+            margin: 8px 0;
+            color: #475569;
+        }
+
+        .exam-card a {
+            display: inline-block;
+            margin-top: 12px;
+            color: #2563eb;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .exam-card a:hover {
+            text-decoration: underline;
+        }
+
+        .empty-state {
+            grid-column: 1 / -1;
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 22px;
+            color: #475569;
+            text-align: center;
+        }
+
+        footer {
+            background: #0f172a;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 8px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container">
+            <h1>ExamPath</h1>
+            <p>Find Exams • Colleges • Admissions</p>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="hero">
+            <div class="container">
+                <h2>Find the right path for your education</h2>
+
+                <p>
+                    Discover entrance exams, colleges, admissions,
+                    application deadlines and official links.
+                </p>
+
+                <form id="searchForm" class="search-box">
+                    <input
+                        type="search"
+                        id="searchInput"
+                        placeholder="Search exams, colleges, courses..."
+                        aria-label="Search exams, colleges, and courses"
+                        autocomplete="off"
+                    >
+                    <button type="submit">Search</button>
+                </form>
+
+                <p id="searchStatus" aria-live="polite" style="margin-top: 12px; color: #475569;"></p>
+            </div>
+        </section>
+
+        <section class="categories">
+            <div class="container">
+                <h2>Explore by Category</h2>
+
+                <div class="category-grid">
+                    <button type="button" class="category-btn active" data-category="All">All</button>
+                    <button type="button" class="category-btn" data-category="Engineering">Engineering</button>
+                    <button type="button" class="category-btn" data-category="Medicine">Medicine</button>
+                    <button type="button" class="category-btn" data-category="Law">Law</button>
+                    <button type="button" class="category-btn" data-category="Management">Management</button>
+                    <button type="button" class="category-btn" data-category="Arts">Arts & Science</button>
+                    <button type="button" class="category-btn" data-category="Government">Government Exams</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="upcoming">
+            <div class="container">
+                <h2>Upcoming Opportunities</h2>
+                <div id="examList" class="exam-grid"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 ExamPath</p>
+            <p>Information should always be verified from the official source.</p>
+        </div>
+    </footer>
+
+    <script>
+        const exams = [
+            {
+                title: "JEE Main",
+                category: "Engineering",
+                college: "NTA",
+                deadline: "Session 1 registrations open",
+                link: "https://jeemain.nta.nic.in/"
+            },
+            {
+                title: "NEET UG",
+                category: "Medicine",
+                college: "NTA",
+                deadline: "Application window open",
+                link: "https://neet.nta.nic.in/"
+            },
+            {
+                title: "CLAT",
+                category: "Law",
+                college: "Consortium of NLUs",
+                deadline: "Registration ongoing",
+                link: "https://consortiumofnlus.ac.in/"
+            },
+            {
+                title: "CAT",
+                category: "Management",
+                college: "IIMs",
+                deadline: "Exam registration in progress",
+                link: "https://iimcat.ac.in/"
+            },
+            {
+                title: "CUET UG",
+                category: "Arts",
+                college: "NTA",
+                deadline: "Admissions cycle active",
+                link: "https://cuet.nta.nic.in/"
+            },
+            {
+                title: "SSC CGL",
+                category: "Government",
+                college: "Staff Selection Commission",
+                deadline: "Notification released",
+                link: "https://ssc.nic.in/"
+            },
+            {
+                title: "NATA",
+                category: "Engineering",
+                college: "Council of Architecture",
+                deadline: "Application deadline soon",
+                link: "https://www.nata.in/"
+            },
+            {
+                title: "AIIMS MBBS",
+                category: "Medicine",
+                college: "AIIMS",
+                deadline: "Admissions open",
+                link: "https://www.aiimsexams.ac.in/"
+            }
+        ];
+
+        const examList = document.getElementById("examList");
+        const searchForm = document.getElementById("searchForm");
+        const searchInput = document.getElementById("searchInput");
+        const searchStatus = document.getElementById("searchStatus");
+        const categoryButtons = document.querySelectorAll(".category-btn");
+
+        let currentCategory = "All";
+        let currentQuery = "";
+
+        function renderExams() {
+            const filtered = exams.filter(exam => {
+                const matchesCategory =
+                    currentCategory === "All" || exam.category === currentCategory;
+
+                const query = currentQuery.trim().toLowerCase();
+                const matchesQuery =
+                    !query ||
+                    exam.title.toLowerCase().includes(query) ||
+                    exam.college.toLowerCase().includes(query) ||
+                    exam.category.toLowerCase().includes(query);
+
+                return matchesCategory && matchesQuery;
+            });
+
+            examList.innerHTML = "";
+
+            if (!filtered.length) {
+                examList.innerHTML = `
+                    <div class="empty-state">
+                        No exams found for your search.
+                    </div>
+                `;
+                searchStatus.textContent = "No results found.";
+                return;
+            }
+
+            filtered.forEach(exam => {
+                const card = document.createElement("div");
+                card.className = "exam-card";
+
+                card.innerHTML = `
+                    <div class="badge">${exam.category}</div>
+                    <h3>${exam.title}</h3>
+                    <p><strong>College:</strong> ${exam.college}</p>
+                    <p><strong>Deadline:</strong> ${exam.deadline}</p>
+                    <a href="${exam.link}" target="_blank" rel="noopener noreferrer">
+                        Official Link
+                    </a>
+                `;
+
+                examList.appendChild(card);
+            });
+
+            searchStatus.textContent =
+                filtered.length === 1
+                    ? `Showing 1 result`
+                    : `Showing ${filtered.length} results`;
+        }
+
+        searchForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+            currentQuery = searchInput.value;
+            renderExams();
+        });
+
+        categoryButtons.forEach(button => {
+            button.addEventListener("click", function () {
+                categoryButtons.forEach(btn => btn.classList.remove("active"));
+                this.classList.add("active");
+
+                currentCategory = this.dataset.category;
+                renderExams();
+            });
+        });
+
+        renderExams();
+    </script>
+
+</body>
+</html>
